@@ -1,0 +1,19 @@
+
+.appContainer{
+  background-color:rgb(59, 97, 177);
+  position:relative;
+  width:100vw;
+  height:100vh;
+}
+.app__body{
+  position:absolute;
+  top:50px;
+  left:50px;
+   background-color: white;
+   height:90vh;
+   width:90vw;
+}
+.app__body >h1{
+  text-align: center;
+  color:rgb(59, 97, 177);
+}
