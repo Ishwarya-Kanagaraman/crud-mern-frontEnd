@@ -13,12 +13,12 @@ class App extends React.Component {
   }
   create=data=>{
       if(!data.isEdit){
-      axios.post("http://localhost:5000/info",data).then(res=>{
+      axios.post("/info",data).then(res=>{
         this.getAll()
       })
     }
     else{
-        axios.put("http://localhost:5000/info/update",data).then(res=>{
+        axios.put("/info/update",data).then(res=>{
             this.getAll();
           })
     }
@@ -27,7 +27,7 @@ class App extends React.Component {
    this.getAll();
   }
   getAll(){
-      axios.get("http://localhost:5000/info").then(res=>{
+      axios.get("/info").then(res=>{
     
           this.setState({
               data:res.data
@@ -43,7 +43,7 @@ class App extends React.Component {
   del=data=>{
       const option=window.confirm(`Are you sure want to delete? ${data.Name}`)
          if(option){
-            axios.delete(`http://localhost:5000/info/del/${data._id}`).then(res=>{
+            axios.delete(`/info/del/${data._id}`).then(res=>{
                 this.getAll();
               })
          }
